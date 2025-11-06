@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 import sys
 
-def setup_logger(name: str, log_dir: str = "/app/logs", backup_days: int = 7):
+def setup_logger(name: str, log_dir: str = "./logs", backup_days: int = 7):
     """
     Setup a logger that writes to both console and rotating log files.
     Log files are timestamped and rotated daily.
@@ -12,7 +12,7 @@ def setup_logger(name: str, log_dir: str = "/app/logs", backup_days: int = 7):
     os.makedirs(log_dir, exist_ok=True)
 
     # Timestamped filename
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+    timestamp = datetime.now().strftime("%Y-%m-%d")
     log_filename = os.path.join(log_dir, f"{name}_{timestamp}.log")
 
     # Create logger
