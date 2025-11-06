@@ -12,8 +12,7 @@ def setup_logger(name: str, log_dir: str = "./logs", backup_days: int = 7):
     os.makedirs(log_dir, exist_ok=True)
 
     # Timestamped filename
-    timestamp = datetime.now().strftime("%Y-%m-%d")
-    log_filename = os.path.join(log_dir, f"{name}_{timestamp}.log")
+    log_filename = os.path.join(log_dir, f"{name}.log")
 
     # Create logger
     logger = logging.getLogger(name)
