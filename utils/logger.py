@@ -5,7 +5,7 @@ from datetime import datetime
 import sys
 
 def setup_logger(name: str, log_dir: str = "./logs", backup_days: int = 7):
-    """
+    """ 
     Setup a logger that writes to both console and rotating log files.
     Log files are timestamped and rotated daily.
     """
