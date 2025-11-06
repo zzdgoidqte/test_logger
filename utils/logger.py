@@ -21,10 +21,10 @@ def setup_logger(name: str, log_dir: str = "./logs", backup_days: int = 7):
 
     # File handler: rotate at midnight
     file_handler = TimedRotatingFileHandler(
-        log_filename,
-        when="midnight",
-        interval=1,
-        backupCount=backup_days,
+        log_filename,     # base filename
+        when="midnight",  # rotate at midnight
+        interval=1,       # every day
+        backupCount=0,    # 0 means **keep all old log files**
         encoding="utf-8"
     )
     file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
